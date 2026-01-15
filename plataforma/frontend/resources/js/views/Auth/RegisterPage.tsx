@@ -119,7 +119,7 @@ const RegisterPage = () => {
                             
                             <div className="relative text-center">
                                 <div className="inline-flex items-center justify-center w-20 h-20 mb-4 rounded-2xl bg-white/20 backdrop-blur-sm border border-white/30 shadow-xl">
-                                    <img src="/logo.png" alt="Logo" className="h-12 drop-shadow-2xl" />
+                                    <img src="/static/logo.png" alt="Logo" className="h-12 drop-shadow-2xl" />
                                 </div>
                                 <h1 className="text-3xl font-bold text-white mb-2 tracking-tight">
                                     Únete a Nosotros

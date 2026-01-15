@@ -7,6 +7,7 @@ import { ThemeProvider } from '@/stores/themeContext';
 // Using a basic theme for now to ensure visibility
 // import "primereact/resources/themes/lara-light-blue/theme.css";
 import 'primeicons/primeicons.css';
+import '@/assets/primeicons-custom.css'; // Override font paths
 import '@/assets/tailwind.css';
 
 import './utils/inertiaEncryptionMiddleware';
