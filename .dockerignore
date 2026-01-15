@@ -1,0 +1,32 @@
+# Python
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.env
+
+# Django
+db.sqlite3
+media/
+
+# Node.js
+node_modules/
+aciertaperu/frontend/node_modules
+
+aciertaperu/plataformaapis/debug.log
+aciertaperu/plataformaapis/django_cache/
+# Otros
+.git/
+.gitignore
+.DS_Store
+*.log
+*.gz
+*.zip
+*.tar
+*.tar.gz
+.idea/
+.vscode/
+*.bak
+*.swp
+*.tmp

@@ -1,0 +1,23 @@
+:root[class*='app-dark'] {
+    // Textos con mejor contraste
+    --text-color: #fafaf9;
+    --text-color-secondary: #d6d3d1;
+    
+    // Superficies con mejor jerarquía
+    --surface-ground: #0a0908;
+    --surface-card: #1c1917;
+    --surface-hover: #292524;
+    --surface-overlay: #1c1917;
+    --surface-border: #44403c;
+    
+    // Code blocks
+    --code-background: #1c1917;
+    --code-color: #fafaf9;
+    
+    // Colores de marca ajustados para dark mode
+    --brand-gold: #E8D89A;
+    --brand-gold-dark: #D4AF37;
+    --brand-gold-light: #F4E4B0;
+    --brand-navy: #2a5a82;
+    --brand-navy-deep: #1a3a52;
+}

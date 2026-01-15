@@ -1,0 +1,79 @@
+{
+  "_axios-ngrFHoWO.js": {
+    "file": "assets/axios-ngrFHoWO.js",
+    "name": "axios"
+  },
+  "_inertia-Bvw6rmwS.js": {
+    "file": "assets/inertia-Bvw6rmwS.js",
+    "name": "inertia",
+    "imports": [
+      "_vendor-0KNVpR7x.js",
+      "_axios-ngrFHoWO.js"
+    ]
+  },
+  "_vendor-!~{004}~.js": {
+    "file": "assets/vendor-DOEpCyAp.css",
+    "src": "_vendor-!~{004}~.js"
+  },
+  "_vendor-0KNVpR7x.js": {
+    "file": "assets/vendor-0KNVpR7x.js",
+    "name": "vendor",
+    "isDynamicEntry": true,
+    "css": [
+      "assets/vendor-DOEpCyAp.css"
+    ],
+    "assets": [
+      "assets/primeicons-DMOk5skT.eot",
+      "assets/primeicons-C6QP2o4f.woff2",
+      "assets/primeicons-WjwUDZjB.woff",
+      "assets/primeicons-MpK4pl85.ttf",
+      "assets/primeicons-Dr5RGzOO.svg"
+    ]
+  },
+  "_vue-DPkY4Buo.js": {
+    "file": "assets/vue-DPkY4Buo.js",
+    "name": "vue",
+    "imports": [
+      "_inertia-Bvw6rmwS.js",
+      "_vendor-0KNVpR7x.js"
+    ],
+    "dynamicImports": [
+      "_vendor-0KNVpR7x.js"
+    ]
+  },
+  "node_modules/.pnpm/primeicons@7.0.0/node_modules/primeicons/fonts/primeicons.eot": {
+    "file": "assets/primeicons-DMOk5skT.eot",
+    "src": "node_modules/.pnpm/primeicons@7.0.0/node_modules/primeicons/fonts/primeicons.eot"
+  },
+  "node_modules/.pnpm/primeicons@7.0.0/node_modules/primeicons/fonts/primeicons.svg": {
+    "file": "assets/primeicons-Dr5RGzOO.svg",
+    "src": "node_modules/.pnpm/primeicons@7.0.0/node_modules/primeicons/fonts/primeicons.svg"
+  },
+  "node_modules/.pnpm/primeicons@7.0.0/node_modules/primeicons/fonts/primeicons.ttf": {
+    "file": "assets/primeicons-MpK4pl85.ttf",
+    "src": "node_modules/.pnpm/primeicons@7.0.0/node_modules/primeicons/fonts/primeicons.ttf"
+  },
+  "node_modules/.pnpm/primeicons@7.0.0/node_modules/primeicons/fonts/primeicons.woff": {
+    "file": "assets/primeicons-WjwUDZjB.woff",
+    "src": "node_modules/.pnpm/primeicons@7.0.0/node_modules/primeicons/fonts/primeicons.woff"
+  },
+  "node_modules/.pnpm/primeicons@7.0.0/node_modules/primeicons/fonts/primeicons.woff2": {
+    "file": "assets/primeicons-C6QP2o4f.woff2",
+    "src": "node_modules/.pnpm/primeicons@7.0.0/node_modules/primeicons/fonts/primeicons.woff2"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-DXehmnm2.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "imports": [
+      "_vue-DPkY4Buo.js",
+      "_vendor-0KNVpR7x.js",
+      "_axios-ngrFHoWO.js",
+      "_inertia-Bvw6rmwS.js"
+    ],
+    "css": [
+      "assets/app-BDdSaJf_.css"
+    ]
+  }
+}

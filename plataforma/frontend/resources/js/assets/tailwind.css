@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Clases Utilitarias Personalizadas */
+@layer components {
+  .btn-legal {
+    @apply bg-brand-gold text-brand-navy-deep font-semibold 
+           px-6 py-2.5 rounded-md hover:bg-brand-gold-dark 
+           transition-all duration-200 shadow-sm hover:shadow-md;
+  }
+
+  .card-book {
+    @apply bg-white dark:bg-surface-card border border-brand-gold-light 
+           dark:border-brand-gold/30 hover:border-brand-gold 
+           dark:hover:border-brand-gold rounded-md shadow-sm 
+           hover:shadow-md transition-all;
+  }
+
+  .badge-category {
+    @apply bg-brand-navy dark:bg-brand-navy/80 
+           text-brand-gold-light dark:text-brand-gold 
+           px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .link-legal {
+    @apply text-brand-gold hover:text-brand-gold-dark 
+           dark:text-brand-gold dark:hover:text-brand-gold-light
+           underline-offset-4 hover:underline transition-colors;
+  }
+
+  .heading-legal {
+    @apply font-serif font-bold text-brand-navy-deep 
+           dark:text-surface-50;
+  }
+}
+
+/* CRÍTICO: NO transiciones en cambios de tema */
+@layer base {
+  /* Scrollbar personalizado SIN transición */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #D4AF37 transparent;
+  }
+
+  *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #D4AF37;
+    border-radius: 4px;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: #B8941F;
+  }
+
+  /* Dark mode scrollbar */
+  .app-dark * {
+    scrollbar-color: #E8D89A transparent;
+  }
+
+  .app-dark *::-webkit-scrollbar-thumb {
+    background-color: #E8D89A;
+  }
+
+  .app-dark *::-webkit-scrollbar-thumb:hover {
+    background-color: #F4E4B0;
+  }
+
+  /* Solo transiciones en HOVER/FOCUS, NO en cambio de tema */
+  button,
+  a,
+  input,
+  textarea,
+  select,
+  .p-button,
+  .p-inputtext {
+    transition: background-color 0.2s ease,
+                color 0.2s ease,
+                border-color 0.2s ease,
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+  }
+
+  /* Imágenes NUNCA tienen transiciones */
+  img, svg {
+    transition: none !important;
+  }
+
+  /* Iconos sin transición en cambio de tema */
+  i[class^="pi-"],
+  i[class*=" pi-"] {
+    transition: none !important;
+  }
+
+  /* Contenedores principales SIN transición */
+  .layout-wrapper,
+  .layout-topbar,
+  .layout-sidebar,
+  .layout-main-container,
+  .layout-footer {
+    transition: none !important;
+  }
+
+  /* Cards SIN transición en tema, SÍ en hover */
+  .card,
+  .card-book {
+    transition: box-shadow 0.2s ease,
+                transform 0.2s ease !important;
+  }
+}
+
+/* Animaciones normales (no afectadas por tema) */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-4px); }
+  40%, 80% { transform: translateX(4px); }
+}
+
+.animate-shake {
+  animation: shake 0.3s ease-in-out;
+}

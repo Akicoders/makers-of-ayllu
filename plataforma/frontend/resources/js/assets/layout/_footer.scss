@@ -1,0 +1,13 @@
+
+.layout-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem 0;
+    gap: 0.5rem;
+    border-top: 1px solid var(--surface-border);
+    background-color: var(--surface-card);
+    backdrop-filter: blur(8px);
+    transition: background-color var(--transition-duration);
+}
