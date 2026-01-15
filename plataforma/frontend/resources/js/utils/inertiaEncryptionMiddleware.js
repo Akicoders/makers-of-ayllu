@@ -1,4 +1,4 @@
-import { router } from '@inertiajs/vue3';
+import { router } from '@inertiajs/react';
 import { encryptWithRSA } from '@/utils/encryption';
 
 const originalVisit = router.visit;

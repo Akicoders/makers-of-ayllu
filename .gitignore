@@ -144,3 +144,5 @@ GitHub.sublime-settings
 .history
 
 .pnpm-store/
+
+plataforma/config/static/
