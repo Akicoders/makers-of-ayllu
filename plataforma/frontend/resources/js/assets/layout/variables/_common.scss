@@ -1,37 +1,41 @@
 :root {
     // Colores de marca
-    --brand-gold: #D4AF37;
-    --brand-gold-dark: #B8941F;
-    --brand-gold-light: #F4E4B0;
-    --brand-navy: #1a3a52;
-    --brand-navy-deep: #0f2537;
-    --brand-cream: #FFF8E8;
-    
+    // Colores de marca
+    --brand-primary: #0ebfcf;
+    --brand-dark: #141414;
+    --brand-light: #f8fafc;
+    --brand-gold: #0ebfcf; // Fallback mapping
+    --brand-gold-dark: #098a96; // Fallback mapping
+    --brand-gold-light: #e0f9fb; // Fallback mapping
+    --brand-navy: #141414; // Fallback mapping
+    --brand-navy-deep: #000000; // Fallback mapping
+    --brand-cream: #f8fafc; // Fallback mapping
+
     // Primary actualizado
-    --primary-color: #D4AF37;
+    --primary-color: #0ebfcf;
     --primary-contrast-color: #0f2537;
-    
+
     // Textos
     --text-color: #1c1917;
     --text-color-secondary: #57534e;
-    
+
     // Superficies
     --surface-border: #e7e5e4;
     --surface-card: #ffffff;
     --surface-hover: #f5f5f4;
     --surface-overlay: #ffffff;
-    
+
     // Otros
     --transition-duration: 0.2s;
     --maskbg: rgba(0, 0, 0, 0.4);
     --content-border-radius: 6px;
     --layout-section-transition-duration: 0.2s;
     --element-transition-duration: 0.2s;
-    
+
     // Focus ring
     --focus-ring-width: 2px;
     --focus-ring-style: solid;
-    --focus-ring-color: #D4AF37;
+    --focus-ring-color: #0ebfcf;
     --focus-ring-offset: 2px;
     --focus-ring-shadow: 0 0 0 1px var(--focus-ring-color);
 }

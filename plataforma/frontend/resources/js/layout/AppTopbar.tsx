@@ -70,27 +70,27 @@ const AppTopbar = () => {
                 .layout-topbar-logo span {
                     font-family: 'Merriweather', Georgia, serif;
                     font-weight: 700;
-                    color: var(--brand-navy-deep);
+                    color: var(--brand-dark);
                 }
 
                 :root[class*='app-dark'] .layout-topbar-logo span {
-                    color: var(--brand-gold);
+                    color: var(--brand-primary);
                 }
 
                 .layout-topbar-actions .p-button {
-                    color: var(--brand-gold);
+                    color: var(--brand-primary);
                 }
 
                 .layout-topbar-actions .p-button:hover {
-                    background-color: rgba(212, 175, 55, 0.1);
+                    background-color: rgba(14, 191, 207, 0.1);
                 }
 
                 :root[class*='app-dark'] .layout-topbar-actions .p-button {
-                    color: var(--brand-gold);
+                    color: var(--brand-primary);
                 }
 
                 :root[class*='app-dark'] .layout-topbar-actions .p-button:hover {
-                    background-color: rgba(232, 216, 154, 0.1);
+                    background-color: rgba(14, 191, 207, 0.1);
                 }
             `}</style>
         </div>

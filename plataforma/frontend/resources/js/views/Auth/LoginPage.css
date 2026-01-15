@@ -79,3 +79,20 @@
 .p-inputtext:focus {
     box-shadow: none;
 }
+
+.p-password {
+    width: 100%;
+}
+
+.p-password-input {
+    width: 100%;
+}
+
+[data-pc-name='password'] {
+    width: 100% !important;
+    display: flex !important;
+}
+
+[data-pc-name='password'] > div {
+    width: 100% !important;
+}

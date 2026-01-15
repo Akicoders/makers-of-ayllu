@@ -4,17 +4,17 @@
 const CustomAura = {
     semantic: {
         primary: {
-            50: '#FFF8E8', // cream
-            100: '#F4E4B0', // light gold
-            200: '#E8D89A',
-            300: '#DCCC84',
-            400: '#D0C06E',
-            500: '#D4AF37', // gold principal
-            600: '#B8941F', // dark gold
-            700: '#9C7A19',
-            800: '#806013',
-            900: '#64460D',
-            950: '#482C07'
+            50: '#effbfc',
+            100: '#dff6f9',
+            200: '#bfecf2',
+            300: '#90deea',
+            400: '#5ac9db',
+            500: '#0ebfcf', // Primary
+            600: '#069eb0',
+            700: '#087f8f',
+            800: '#0b6673',
+            900: '#0d5560',
+            950: '#043841'
         },
         surface: {
             0: '#ffffff',
@@ -29,8 +29,7 @@ const CustomAura = {
             800: '#292524',
             900: '#1c1917',
             950: '#0c0a09',
-            navy: '#1a3a52',
-            'navy-deep': '#0f2537'
+            'dark-bg': '#141414' // Custom dark background
         }
     },
     // Component overrides mock to match structure
@@ -39,13 +38,15 @@ const CustomAura = {
             css: {
                 light: {
                     '--primary-color': '{primary.500}',
-                    '--primary-contrast-color': '{primary.50}',
+                    '--primary-contrast-color': '#ffffff',
                     '--text-color': '{surface.900}'
                 },
                 dark: {
                     '--primary-color': '{primary.500}',
-                    '--primary-contrast-color': '{primary.50}',
-                    '--text-color': '{surface.50}'
+                    '--primary-contrast-color': '{surface.900}',
+                    '--text-color': '{surface.50}',
+                    '--surface-ground': '{surface.dark-bg}',
+                    '--surface-card': '#1e1e1e' // Slightly lighter than bg for cards
                 }
             }
         }

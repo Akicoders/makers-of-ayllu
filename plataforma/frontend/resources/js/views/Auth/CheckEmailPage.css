@@ -16,3 +16,9 @@
 .animate-shake {
     animation: shake 0.4s ease-in-out;
 }
+
+.p-password,
+.p-password-input,
+.p-inputtext {
+    width: 100%;
+}

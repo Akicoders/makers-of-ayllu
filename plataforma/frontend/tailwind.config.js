@@ -17,18 +17,19 @@ export default {
         extend: {
             colors: {
                 // Colores de marca Editorial Atlántico
+                // Colores de marca Editorial Atlántico - Updated
                 brand: {
-                    gold: '#D4AF37',
-                    'gold-dark': '#B8941F',
-                    'gold-light': '#F4E4B0',
-                    navy: '#1a3a52',
-                    'navy-deep': '#0f2537',
-                    cream: '#FFF8E8',
+                    primary: '#0ebfcf',
+                    'primary-dark': '#098a96', // Shade estimate
+                    'primary-light': '#e0f9fb', // Tint estimate
+                    dark: '#141414',
+                    light: '#f8fafc', // Slate-50
+                    surface: '#ffffff'
                 }
             },
             fontFamily: {
-                serif: ['Merriweather', 'Georgia', 'serif'],  // Para títulos legales
-                sans: ['Lato', 'system-ui', 'sans-serif'],    // Para cuerpo
+                serif: ['Merriweather', 'Georgia', 'serif'], // Para títulos legales
+                sans: ['Lato', 'system-ui', 'sans-serif'] // Para cuerpo
             }
         }
     }
