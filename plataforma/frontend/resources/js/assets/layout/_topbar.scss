@@ -1,10 +1,9 @@
-
 @use 'mixins' as *;
 
 .layout-topbar {
     position: fixed;
     height: 4rem;
-    z-index: 997;
+    z-index: 1001;
     left: 0;
     top: 0;
     width: 100%;
@@ -12,8 +11,9 @@
     background-color: var(--surface-card);
     backdrop-filter: blur(8px);
     border-bottom: 1px solid var(--surface-border);
-    transition: left var(--layout-section-transition-duration),
-                background-color var(--transition-duration);
+    transition:
+        left var(--layout-section-transition-duration),
+        background-color var(--transition-duration);
     display: flex;
     align-items: center;
 
@@ -37,7 +37,8 @@
             transform: translateY(-1px);
         }
 
-        svg, img {
+        svg,
+        img {
             width: 3rem;
             height: auto;
         }

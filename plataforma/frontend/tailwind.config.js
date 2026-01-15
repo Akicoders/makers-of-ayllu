@@ -25,6 +25,13 @@ export default {
                     dark: '#141414',
                     light: '#f8fafc', // Slate-50
                     surface: '#ffffff'
+                },
+                surface: {
+                    ground: 'var(--surface-ground)',
+                    card: 'var(--surface-card)',
+                    overlay: 'var(--surface-overlay)',
+                    border: 'var(--surface-border)',
+                    hover: 'var(--surface-hover)'
                 }
             },
             fontFamily: {

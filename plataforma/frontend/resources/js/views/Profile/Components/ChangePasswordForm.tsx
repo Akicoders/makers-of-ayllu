@@ -48,13 +48,16 @@ const ChangePasswordForm: React.FC = () => {
     return (
         <>
             <Toast ref={toast} />
-            <Card className="shadow-xl rounded-2xl border border-slate-200 dark:border-slate-700 hover:shadow-lg transition duration-300" title={<h3 className="text-xl font-bold text-slate-800 dark:text-slate-100">Cambiar Contraseña</h3>}>
+            <Card
+                className="shadow-xl rounded-2xl border border-slate-200 dark:border-surface-border bg-white dark:bg-surface-card hover:shadow-lg transition duration-300"
+                title={<h3 className="text-xl font-bold text-slate-800 dark:text-slate-100">Cambiar Contraseña</h3>}
+            >
                 <form
                     onSubmit={(e) => {
                         e.preventDefault();
                         setShowConfirmModal(true);
                     }}
-                    className="space-y-6"
+                    className="space-y-8 p-8"
                 >
                     <div className="flex flex-col gap-2">
                         <label htmlFor="current_password" className="text-sm font-medium text-slate-700 dark:text-slate-300">

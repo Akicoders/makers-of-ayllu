@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { useForm } from '@inertiajs/react';
-import { useToast } from '@/components/ToastContext'; // Assuming global toast context or similar, otherwise use PrimeReact Toast directly if available in Layout
 // Actually app setup uses ToastProvider? I recall seeing Toast in AppLayout or similar.
 // Wait, Vue Used const toast = useToast() from primevue/usetoast.
 // In React, we usually wrap app with ToastProvider.
-// I'll check if I need to add a Toast ref to layout or use a custom hook. 
+// I'll check if I need to add a Toast ref to layout or use a custom hook.
 // For now I will assume I can use a local Toast reference or dispatch events.
 // BETTER: Use PrimeReact's <Toast ref={toast} /> locally in this component if not global.
 // Usage in Vue: toast.add(...)
@@ -33,7 +32,7 @@ const UpdateProfileForm: React.FC<UpdateProfileFormProps> = ({ user }) => {
         last_name: user.last_name || '',
         email: user.email || '',
         username: user.username || '',
-        phone_number: user.phone_number || '',
+        phone_number: user.phone_number || ''
     });
 
     const submit = () => {
@@ -48,9 +47,9 @@ const UpdateProfileForm: React.FC<UpdateProfileFormProps> = ({ user }) => {
                 toast.current?.show({ severity: 'error', summary: 'Error de Validación', detail: String(firstError), life: 5000 });
             },
             onFinish: () => {
-                 // confirm modal closed in onSuccess? 
-                 // Vue had onFinish: showConfirmModal = false. 
-                 setShowConfirmModal(false);
+                // confirm modal closed in onSuccess?
+                // Vue had onFinish: showConfirmModal = false.
+                setShowConfirmModal(false);
             }
         });
     };
@@ -58,31 +57,46 @@ const UpdateProfileForm: React.FC<UpdateProfileFormProps> = ({ user }) => {
     return (
         <>
             <Toast ref={toast} />
-            <Card className="shadow-xl rounded-2xl border border-slate-200 dark:border-slate-700 hover:shadow-lg transition-shadow duration-300"
-                title={
-                    <h3 className="text-xl font-bold text-slate-800 dark:text-slate-100 mb-2">Información del Perfil</h3>
-                }
+            <Card
+                className="shadow-xl rounded-2xl border border-slate-200 dark:border-surface-border bg-white dark:bg-surface-card hover:shadow-lg transition-shadow duration-300"
+                title={<h3 className="text-xl font-bold text-slate-800 dark:text-slate-100 mb-2">Información del Perfil</h3>}
             >
-                <form onSubmit={(e) => { e.preventDefault(); setShowConfirmModal(true); }}>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4 mb-6">
+                <form
+                    onSubmit={(e) => {
+                        e.preventDefault();
+                        setShowConfirmModal(true);
+                    }}
+                    className="p-8"
+                >
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 mb-8">
                         <div className="flex flex-col gap-2">
-                            <label htmlFor="first_name" className="text-slate-700 dark:text-slate-300">Nombre</label>
+                            <label htmlFor="first_name" className="text-slate-700 dark:text-slate-300">
+                                Nombre
+                            </label>
                             <InputText id="first_name" value={data.first_name} onChange={(e) => setData('first_name', e.target.value)} />
                         </div>
                         <div className="flex flex-col gap-2">
-                            <label htmlFor="last_name" className="text-slate-700 dark:text-slate-300">Apellidos</label>
+                            <label htmlFor="last_name" className="text-slate-700 dark:text-slate-300">
+                                Apellidos
+                            </label>
                             <InputText id="last_name" value={data.last_name} onChange={(e) => setData('last_name', e.target.value)} />
                         </div>
                         <div className="flex flex-col gap-2 md:col-span-2">
-                            <label htmlFor="email" className="text-slate-700 dark:text-slate-300">Correo Electrónico</label>
+                            <label htmlFor="email" className="text-slate-700 dark:text-slate-300">
+                                Correo Electrónico
+                            </label>
                             <InputText id="email" value={data.email} onChange={(e) => setData('email', e.target.value)} type="email" />
                         </div>
                         <div className="flex flex-col gap-2">
-                            <label htmlFor="username" className="text-slate-700 dark:text-slate-300">Nombre de Usuario</label>
+                            <label htmlFor="username" className="text-slate-700 dark:text-slate-300">
+                                Nombre de Usuario
+                            </label>
                             <InputText id="username" value={data.username} onChange={(e) => setData('username', e.target.value)} />
                         </div>
                         <div className="flex flex-col gap-2">
-                            <label htmlFor="phone_number" className="text-slate-700 dark:text-slate-300">Teléfono</label>
+                            <label htmlFor="phone_number" className="text-slate-700 dark:text-slate-300">
+                                Teléfono
+                            </label>
                             <InputText id="phone_number" value={data.phone_number} onChange={(e) => setData('phone_number', e.target.value)} />
                         </div>
                     </div>

@@ -8,14 +8,7 @@ interface StatsWidgetProps {
     footerSub?: string;
 }
 
-const StatsWidget: React.FC<StatsWidgetProps> = ({ 
-    type = "users", 
-    value, 
-    subtitle = "", 
-    footerMain = "", 
-    footerSub = "" 
-}) => {
-
+const StatsWidget: React.FC<StatsWidgetProps> = ({ type = 'users', value, subtitle = '', footerMain = '', footerSub = '' }) => {
     const getBgColor = () => {
         if (type === 'users' || type === 'my_clients') return 'bg-blue-100 dark:bg-blue-500/20';
         if (type === 'sales' || type === 'my_sales') return 'bg-green-100 dark:bg-green-500/20';
@@ -41,13 +34,11 @@ const StatsWidget: React.FC<StatsWidgetProps> = ({
     };
 
     return (
-        <div className="card transition-all duration-300 ease-in-out hover:shadow-lg hover:-translate-y-1 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl p-4">
+        <div className="card transition-all duration-300 ease-in-out hover:shadow-lg hover:-translate-y-1 bg-white dark:bg-surface-card border border-gray-200 dark:border-surface-border rounded-xl p-4">
             <div className="flex justify-between mb-4">
                 <div>
                     <span className="block text-slate-500 dark:text-slate-400 font-medium mb-3">{subtitle}</span>
-                    <div className="text-slate-900 dark:text-slate-100 font-bold text-2xl">
-                        {value}
-                    </div>
+                    <div className="text-slate-900 dark:text-slate-100 font-bold text-2xl">{value}</div>
                 </div>
                 <div className={`flex items-center justify-center rounded-full w-12 h-12 flex-shrink-0 ${getBgColor()}`}>
                     <i className={`!text-xl ${getIconClass()}`}></i>

@@ -40,7 +40,7 @@ const AppTopbar = () => {
                     <i className="pi pi-bars"></i>
                 </button>
                 <Link href="/" className="layout-topbar-logo">
-                    <img src="/static/logo.png" alt="Logo Editorial Atlántico" className="h-9" />
+                    <img src="/static/logo.png" alt="Logo Editorial Atlántico" className="h-10 w-auto" />
                     <span>Plataforma</span>
                 </Link>
             </div>
