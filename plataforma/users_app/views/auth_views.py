@@ -2,6 +2,7 @@ import logging
 from django.forms import ValidationError
 from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
+from django.conf import settings
 from config.utils import create_decrypted_data
 from users_app.services.auth_service import authenticate_user, logout_user, register_user, complete_2fa_login
 from inertia import InertiaResponse
@@ -17,6 +18,7 @@ def index(request):
         props={
             "errors": request.session.pop("errors", None),
             "success": request.session.pop("success", None),
+            "hcaptchaSitekey": settings.HCAPTCHA_SITEKEY,
         },
     )
 
@@ -131,6 +133,7 @@ def register_view(request):
             props={
                 "errors": request.session.pop("errors", None),
                 "success": request.session.pop("success", None),
+                "hcaptchaSitekey": settings.HCAPTCHA_SITEKEY,
             },
         )
     if request.method == "POST":

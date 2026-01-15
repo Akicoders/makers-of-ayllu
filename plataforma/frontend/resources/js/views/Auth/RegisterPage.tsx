@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, FormEvent } from 'react';
+import { useState, useRef, FormEvent } from 'react';
 import { useForm, Link } from '@inertiajs/react';
 import { InputText } from 'primereact/inputtext';
 import { Password } from 'primereact/password';
@@ -9,7 +9,7 @@ import { useTheme } from '@/stores/themeContext';
 import FloatingConfigurator from '@/components/FloatingConfigurator';
 import './RegisterPage.css';
 
-const RegisterPage = () => {
+const RegisterPage = ({ hcaptchaSitekey }: { hcaptchaSitekey: string }) => {
     const { darkMode } = useTheme();
     const captchaRef = useRef<HCaptcha>(null);
     const [step, setStep] = useState(1);
@@ -323,7 +323,7 @@ const RegisterPage = () => {
                                     <div className="flex justify-center py-2">
                                         <HCaptcha
                                             ref={captchaRef}
-                                            sitekey="b476c6ce-1b26-419e-b96e-5e9e4b30fb00"
+                                            sitekey={hcaptchaSitekey}
                                             onVerify={onVerify}
                                             onExpire={onExpired}
                                             theme={darkMode ? 'dark' : 'light'}

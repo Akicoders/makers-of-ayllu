@@ -11,11 +11,15 @@ import { useTheme } from '@/stores/themeContext';
 import FloatingConfigurator from '@/components/FloatingConfigurator';
 import './LoginPage.css';
 
-const LoginPage = () => {
+const LoginPage = ({ hcaptchaSitekey }: { hcaptchaSitekey: string }) => {
     const { darkMode } = useTheme();
     
     const captchaRef = useRef<HCaptcha>(null);
-    const nodeRef = useRef(null); // Recommended for reaction-transition-group strict mode
+    const nodeRef = useRef(null); // Main container transition
+    const emailErrorRef = useRef(null); // Email error message transition
+    const passwordErrorRef = useRef(null); // Password error message transition
+    const hcaptchaErrorRef = useRef(null); // hCaptcha error message transition
+    const generalErrorRef = useRef(null); // General error message transition
 
     const { data, setData, post, processing, errors, clearErrors, reset } = useForm({
         email: '',
@@ -130,8 +134,10 @@ const LoginPage = () => {
                                                 placeholder="tu@email.com" 
                                             />
                                         </div>
-                                        <CSSTransition in={!!errors.email} timeout={300} classNames="slide-fade" unmountOnExit>
-                                            <Message severity="error" className="mt-2 w-full justify-start" text={errorMessage(errors.email)} />
+                                        <CSSTransition in={!!errors.email} timeout={300} classNames="slide-fade" unmountOnExit nodeRef={emailErrorRef}>
+                                            <div ref={emailErrorRef}>
+                                                <Message severity="error" className="mt-2 w-full justify-start" text={errorMessage(errors.email)} />
+                                            </div>
                                         </CSSTransition>
                                     </div>
 
@@ -152,8 +158,10 @@ const LoginPage = () => {
                                             placeholder="••••••••" 
                                             invalid={!!errors.password}
                                         />
-                                        <CSSTransition in={!!errors.password} timeout={300} classNames="slide-fade" unmountOnExit>
-                                            <Message severity="error" className="mt-2 w-full justify-start" text={errorMessage(errors.password)} />
+                                        <CSSTransition in={!!errors.password} timeout={300} classNames="slide-fade" unmountOnExit nodeRef={passwordErrorRef}>
+                                            <div ref={passwordErrorRef}>
+                                                <Message severity="error" className="mt-2 w-full justify-start" text={errorMessage(errors.password)} />
+                                            </div>
                                         </CSSTransition>
                                     </div>
 
@@ -161,21 +169,25 @@ const LoginPage = () => {
                                     <div className="flex justify-center py-2">
                                         <HCaptcha
                                             ref={captchaRef}
-                                            sitekey="b476c6ce-1b26-419e-b96e-5e9e4b30fb00"
+                                            sitekey={hcaptchaSitekey}
                                             onVerify={onVerify}
                                             onExpire={onExpired}
                                             theme={darkMode ? 'dark' : 'light'}
                                         />
                                     </div>
-                                    <CSSTransition in={!!errors.hcaptcha} timeout={300} classNames="slide-fade" unmountOnExit>
-                                        <Message severity="error" className="w-full justify-start" text={errorMessage(errors.hcaptcha)} />
+                                    <CSSTransition in={!!errors.hcaptcha} timeout={300} classNames="slide-fade" unmountOnExit nodeRef={hcaptchaErrorRef}>
+                                        <div ref={hcaptchaErrorRef}>
+                                            <Message severity="error" className="w-full justify-start" text={errorMessage(errors.hcaptcha)} />
+                                        </div>
                                     </CSSTransition>
 
                                     {/* Error General (__all__) */}
                                     {/* @ts-ignore */}
-                                    <CSSTransition in={!!errors.__all__} timeout={300} classNames="slide-fade" unmountOnExit>
-                                        {/* @ts-ignore */}
-                                        <Message severity="error" className="w-full justify-start" text={errorMessage(errors.__all__)} />
+                                    <CSSTransition in={!!errors.__all__} timeout={300} classNames="slide-fade" unmountOnExit nodeRef={generalErrorRef}>
+                                        <div ref={generalErrorRef}>
+                                            {/* @ts-ignore */}
+                                            <Message severity="error" className="w-full justify-start" text={errorMessage(errors.__all__)} />
+                                        </div>
                                     </CSSTransition>
 
                                     {/* Submit Button */}

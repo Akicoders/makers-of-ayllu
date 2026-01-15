@@ -107,7 +107,7 @@ def authenticate_user(request):
                 return "2fa_required"  # Indicar que se necesita 2FA
             except Exception as e:
                 logger.error(f"Error enviando código 2FA a {user.email}: {e}")
-                request.session["errors"] = {"__all__": "Error enviando código de seguridad. Intente más tarde."}
+                request.session["errors"] = {"__all__": f"Error enviando código: {str(e)}"}
                 return False
         else:
             LoginIncorrect.objects.create(user=user, ip_address=ip_address)

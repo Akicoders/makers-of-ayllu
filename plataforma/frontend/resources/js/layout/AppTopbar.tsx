@@ -11,22 +11,22 @@ const AppTopbar = () => {
     const items = [
         {
             items: [
-                { 
-                    label: 'Perfil', 
-                    icon: 'pi pi-user', 
+                {
+                    label: 'Perfil',
+                    icon: 'pi pi-user',
                     command: () => {
                         router.visit('/perfil/');
                     }
                 },
-                { 
-                    label: 'Cerrar sesión', 
-                    icon: 'pi pi-sign-out', 
+                {
+                    label: 'Cerrar sesión',
+                    icon: 'pi pi-sign-out',
                     command: () => {
                         router.post('/logout/');
                     }
-                },
-            ],
-        },
+                }
+            ]
+        }
     ];
 
     const toggleProfileMenu = (event: React.MouseEvent) => {
@@ -47,26 +47,10 @@ const AppTopbar = () => {
 
             <div className="layout-topbar-actions">
                 {/* Botón Dark Mode */}
-                <Button 
-                    type="button" 
-                    onClick={toggleDarkMode}
-                    icon={darkMode ? 'pi pi-moon' : 'pi pi-sun'}
-                    rounded
-                    text
-                    severity="secondary"
-                    tooltip={darkMode ? 'Activar modo claro' : 'Activar modo oscuro'}
-                />
+                <Button type="button" onClick={toggleDarkMode} icon={darkMode ? 'pi pi-moon' : 'pi pi-sun'} rounded text severity="secondary" tooltip={darkMode ? 'Dark' : 'Light'} />
 
                 {/* Botón Perfil */}
-                <Button 
-                    type="button" 
-                    onClick={toggleProfileMenu}
-                    icon="pi pi-user"
-                    rounded
-                    text
-                    severity="secondary"
-                    tooltip="Menú de usuario"
-                />
+                <Button type="button" onClick={toggleProfileMenu} icon="pi pi-user" rounded text severity="secondary" tooltip="Perfil" />
                 <Menu model={items} popup ref={menu} />
             </div>
 
