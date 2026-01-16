@@ -223,6 +223,97 @@ def logout_user(request):
     return response
 
 
+def complete_registration_verification(request, code):
+    """
+    Verifica el código de registro, activa el usuario y hace login.
+    Retorna (success, message)
+    """
+    pending_email = request.session.get('pending_user_email')
+    
+    if not pending_email:
+        return False, "Sesión expirada. Vuelve a registrarte."
+        
+    try:
+        user = User.objects.get(email=pending_email)
+        
+        # Verificar código usando el servicio de email
+        from users_app.services.email_service import verify_code
+        if verify_code(user, code):
+            # Código correcto - activar usuario
+            user.is_active = True
+            user.save()
+            
+            # Limpiar sesión
+            if 'pending_user_email' in request.session:
+                del request.session['pending_user_email']
+            
+            # Login automático
+            auth_login(request, user)
+            
+            return True, "¡Cuenta verificada exitosamente! Bienvenido."
+        else:
+            return False, "Código incorrecto o expirado"
+            
+    except User.DoesNotExist:
+        return False, "Usuario no encontrado"
+    except Exception as e:
+        logger.error(f"Error verificando código de registro: {e}")
+        return False, "Error interno. Intente más tarde."
+
+
+def resend_registration_code_service(request):
+    """
+    Reenvía el código de verificación de registro
+    Retorna (success, message)
+    """
+    pending_email = request.session.get('pending_user_email')
+    
+    if not pending_email:
+        return False, "Sesión expirada. Vuelve a registrarte."
+        
+    try:
+        user = User.objects.get(email=pending_email)
+        
+        from users_app.services.email_service import resend_verification_code
+        if resend_verification_code(request, user):
+            return True, "Código reenviado exitosamente"
+        else:
+            return False, "Error reenviando código. Intente más tarde."
+            
+    except User.DoesNotExist:
+        return False, "Usuario no encontrado"
+    except Exception as e:
+        logger.error(f"Error reenviando código de registro: {e}")
+        return False, "Error interno. Intente más tarde."
+
+
+def resend_2fa_code_service(request):
+    """
+    Reenvía el código 2FA
+    Retorna (success, message)
+    """
+    pending_email = request.session.get('pending_2fa_user_email')
+    ip_address = request.session.get('pending_2fa_ip')
+    
+    if not pending_email or not ip_address:
+        return False, "Sesión expirada. Vuelve a iniciar sesión."
+    
+    try:
+        user = User.objects.get(email=pending_email)
+        
+        from users_app.services.email_service import resend_2fa_code
+        if resend_2fa_code(request, user, ip_address):
+            return True, "Código de seguridad reenviado exitosamente"
+        else:
+            return False, "Error reenviando código. Intente más tarde."
+            
+    except User.DoesNotExist:
+        return False, "Usuario no encontrado"
+    except Exception as e:
+        logger.error(f"Error reenviando código 2FA: {e}")
+        return False, "Error interno. Intente más tarde."
+
+
 def verify_hcaptcha(token: str):
     try:
         response = requests.post(

@@ -29,7 +29,7 @@ if [ "$DJANGO_SETTINGS_MODULE" = "config.settings.local" ]; then
     # Ejecutar seed solo la primera vez
     if [ ! -f /app/.seeded ]; then
         echo "Running initial seed..."
-        python manage.py seed_initial_data --settings=config.settings.local
+        python manage.py seed_local --settings=config.settings.local
         touch /app/.seeded
     else
         echo "Seed already executed, skipping."
@@ -53,7 +53,7 @@ else
     # Ejecutar seed solo la primera vez
     if [ ! -f /app/.seeded ]; then
         echo "Running initial seed..."
-        python manage.py seed_initial_data --settings=config.settings.prod 
+        python manage.py seed_prod --settings=config.settings.prod
         touch /app/.seeded
     else
         echo "Seed already executed, skipping."

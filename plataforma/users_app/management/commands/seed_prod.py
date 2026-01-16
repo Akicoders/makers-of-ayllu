@@ -3,9 +3,8 @@ from django.contrib.auth.hashers import make_password
 from django.db import transaction
 from users_app.models import Role, User
 
-
 class Command(BaseCommand):
-    help = "Inserta roles y usuario inicial"
+    help = "Inserta roles y usuario inicial para Producción"
 
     def handle(self, *args, **kwargs):
         try:
@@ -32,12 +31,12 @@ class Command(BaseCommand):
                     },
                 )
                 if created:
-                    self.stdout.write(self.style.SUCCESS("Usuario inicial creado."))
+                    self.stdout.write(self.style.SUCCESS("Usuario Admin inicial creado."))
                 else:
-                    self.stdout.write(self.style.WARNING("Usuario ya existía."))
+                    self.stdout.write(self.style.WARNING("Usuario Admin ya existía."))
 
         except Exception as e:
-            self.stdout.write(self.style.ERROR(f"Error en el seeder: {e}"))
+            self.stdout.write(self.style.ERROR(f"Error en el seeder de producción: {e}"))
             raise e
 
-        self.stdout.write(self.style.SUCCESS("Seed completado."))
+        self.stdout.write(self.style.SUCCESS("Seed de Producción completado."))
