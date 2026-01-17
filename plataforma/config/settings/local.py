@@ -2,7 +2,7 @@ from .base import *
 
 DEBUG = True
 DJANGO_VITE_DEV_MODE = True
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['*']  # Aceptar cualquier host (para desarrollo/pruebas)
 
 DATABASES = {
     'default': {
