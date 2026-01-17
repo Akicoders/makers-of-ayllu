@@ -80,5 +80,5 @@ else:
 # Static Files
 # =============================================================================
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'config' / 'static'
+STATIC_ROOT = BASE_DIR / 'static'  # /app/plataforma/config/static
 DJANGO_VITE_DEV_MODE = False
