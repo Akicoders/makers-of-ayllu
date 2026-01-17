@@ -1,30 +1,14 @@
-version: '3.8'
-
 services:
   web:
     build: .
     restart: always
-    volumes:
-      - static_files:/app/plataforma/config/static
-      - media_files:/app/plataforma/config/media
     environment:
       - DJANGO_SETTINGS_MODULE=config.settings.prod
       - REDIS_URL=redis://redis:6379/0
-    expose:
-      - "8000"
+    ports:
+      - "8000:8000"
     depends_on:
       - redis
-
-  nginx:
-    build: ./nginx
-    restart: always
-    ports:
-      - "8080:80"
-    depends_on:
-      - web
-    volumes:
-      - static_files:/var/www/plataforma/config/static
-      - media_files:/var/www/plataforma/config/media
 
   redis:
     image: redis:7-alpine
@@ -34,6 +18,4 @@ services:
     command: redis-server --appendonly yes
 
 volumes:
-  static_files:
-  media_files:
   redis_data:
