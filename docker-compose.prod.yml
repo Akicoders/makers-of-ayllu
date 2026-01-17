@@ -7,8 +7,9 @@ services:
     networks:
       - app_network
     volumes:
-      - ../files/static:/app/plataforma/config/static
-      - ../files/media:/app/plataforma/config/media
+      # Volumen compartido para archivos estáticos
+      - static_files:/app/plataforma/config/static
+      - media_files:/app/plataforma/config/media
     environment:
       - DJANGO_SETTINGS_MODULE=config.settings.prod
       - REDIS_URL=redis://redis:6379/0
@@ -25,7 +26,9 @@ services:
     depends_on:
       - web
     volumes:
-      - ../files/static:/var/www/plataforma/config/static
+      # Mismo volumen que usa web para estáticos
+      - static_files:/var/www/plataforma/config/static
+      - media_files:/var/www/plataforma/config/media
     networks:
       - app_network
 
@@ -33,10 +36,15 @@ services:
     image: redis:7-alpine
     restart: always
     volumes:
-      - ../files/redis:/data
+      - redis_data:/data
     command: redis-server --appendonly yes
     networks:
       - app_network
+
+volumes:
+  static_files:
+  media_files:
+  redis_data:
 
 networks:
   app_network:
