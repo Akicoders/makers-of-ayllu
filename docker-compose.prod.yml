@@ -28,10 +28,11 @@ services:
       - REDIS_URL=redis://redis:6379/0
       # Se configuran las demás variables en Dokploy UI
     volumes:
-      # Volúmenes para persistencia (Dokploy recomienda ../files/)
-      - ../files/static:/app/plataforma/config/static
-      - ../files/media:/app/plataforma/config/media
-      - ../files/data:/app/plataforma/config
+      # Volúmenes para persistencia de archivos estáticos/media solamente
+      # NO montar sobre /app/plataforma/config (contiene el código de settings)
+      - ../files/static:/app/plataforma/staticfiles
+      - ../files/media:/app/plataforma/media
+      - ../files/db:/app/plataforma/data
     ports:
       - "8000:8000"
     depends_on:
