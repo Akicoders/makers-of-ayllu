@@ -1,3 +1,26 @@
 from django.shortcuts import render
+from django.http import JsonResponse
+from django.views.decorators.http import require_GET
 
-# Create your views here.
+
+@require_GET
+def health_check(request):
+    """
+    Endpoint de health check para Dokploy/Docker.
+    Verifica que la aplicación esté funcionando.
+    """
+    try:
+        # Verificar conexión a BD
+        from django.db import connection
+        with connection.cursor() as cursor:
+            cursor.execute("SELECT 1")
+        
+        return JsonResponse({
+            'status': 'healthy',
+            'database': 'connected',
+        })
+    except Exception as e:
+        return JsonResponse({
+            'status': 'unhealthy',
+            'error': str(e),
+        }, status=500)

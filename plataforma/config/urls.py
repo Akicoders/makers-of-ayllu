@@ -23,6 +23,7 @@ from inertia import inertia
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("api/", include("core_app.urls")),  # Health check y APIs
     path("", include("users_app.urls")),
 ]
 

@@ -2,7 +2,6 @@ import json
 from django.shortcuts import render as render_html
 import os
 import time
-from django.conf import settings
 from django.http import JsonResponse
 from functools import wraps
 from django.core.exceptions import ImproperlyConfigured
@@ -21,17 +20,50 @@ from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.backends import default_backend
 
 
+# =============================================================================
+# Cargar secrets: primero ENV, luego secret.json como fallback
+# =============================================================================
+_secrets_from_file = {}
 
-with open("secret.json") as f:
-    secret = json.loads(f.read())
+# Intentar cargar secret.json (para desarrollo local)
+_secret_paths = [
+    os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'secret.json'),
+    '/app/plataforma/secret.json',
+    'secret.json',
+]
 
-
-def get_secret(secret_name, secrets=secret):
+for _path in _secret_paths:
     try:
-        return secrets[secret_name]
-    except:
-        msg = f"The variable {secret_name} doesn't exit"
-        raise ImproperlyConfigured(msg)
+        with open(_path) as f:
+            _secrets_from_file = json.loads(f.read())
+            break
+    except (FileNotFoundError, json.JSONDecodeError):
+        continue
+
+
+def get_secret(secret_name, default=None):
+    """
+    Obtiene un secreto. Orden de prioridad:
+    1. Variable de entorno
+    2. Archivo secret.json
+    3. Valor por defecto (si se proporciona)
+    """
+    # Primero buscar en variables de entorno
+    env_value = os.environ.get(secret_name)
+    if env_value is not None:
+        return env_value
+    
+    # Luego buscar en secret.json
+    if secret_name in _secrets_from_file:
+        return _secrets_from_file[secret_name]
+    
+    # Si hay default, usarlo
+    if default is not None:
+        return default
+    
+    # Si no se encuentra, lanzar error
+    msg = f"La variable {secret_name} no está definida (ni en ENV ni en secret.json)"
+    raise ImproperlyConfigured(msg)
 
 
 def role_required(role):
