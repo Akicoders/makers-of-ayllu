@@ -4,10 +4,7 @@ services:
   web:
     build: .
     restart: always
-    networks:
-      - app_network
     volumes:
-      # Volumen compartido para archivos estáticos
       - static_files:/app/plataforma/config/static
       - media_files:/app/plataforma/config/media
     environment:
@@ -26,11 +23,8 @@ services:
     depends_on:
       - web
     volumes:
-      # Mismo volumen que usa web para estáticos
       - static_files:/var/www/plataforma/config/static
       - media_files:/var/www/plataforma/config/media
-    networks:
-      - app_network
 
   redis:
     image: redis:7-alpine
@@ -38,14 +32,8 @@ services:
     volumes:
       - redis_data:/data
     command: redis-server --appendonly yes
-    networks:
-      - app_network
 
 volumes:
   static_files:
   media_files:
   redis_data:
-
-networks:
-  app_network:
-    driver: bridge
