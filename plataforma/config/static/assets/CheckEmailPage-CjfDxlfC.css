@@ -1,0 +1,1 @@
+@keyframes shake{0%,to{transform:translate(0)}20%,60%{transform:translate(-6px)}40%,80%{transform:translate(6px)}}.animate-shake{animation:shake .4s ease-in-out}.p-password,.p-password-input,.p-inputtext{width:100%}

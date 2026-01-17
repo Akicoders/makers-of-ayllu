@@ -1,0 +1,700 @@
+{
+  "_AppLayout-BJnk0JD9.js": {
+    "file": "assets/AppLayout-BJnk0JD9.js",
+    "name": "AppLayout",
+    "imports": [
+      "_react-sWiKbk-Z.js",
+      "_vendor-Z5AVMo_k.js",
+      "resources/js/app.tsx"
+    ]
+  },
+  "_AuthLayout-BW1xDVse.js": {
+    "file": "assets/AuthLayout-BW1xDVse.js",
+    "name": "AuthLayout",
+    "imports": [
+      "_react-sWiKbk-Z.js",
+      "_FloatingConfigurator-DSB3k6EL.js"
+    ]
+  },
+  "_BaseDrawer-BkvK-6Gl.js": {
+    "file": "assets/BaseDrawer-BkvK-6Gl.js",
+    "name": "BaseDrawer",
+    "imports": [
+      "_react-sWiKbk-Z.js"
+    ]
+  },
+  "_EnhancedDataTable-BPwqwYJ3.js": {
+    "file": "assets/EnhancedDataTable-BPwqwYJ3.js",
+    "name": "EnhancedDataTable",
+    "imports": [
+      "_react-sWiKbk-Z.js",
+      "_vendor-Z5AVMo_k.js"
+    ]
+  },
+  "_FloatingConfigurator-DSB3k6EL.js": {
+    "file": "assets/FloatingConfigurator-DSB3k6EL.js",
+    "name": "FloatingConfigurator",
+    "imports": [
+      "_react-sWiKbk-Z.js",
+      "resources/js/app.tsx"
+    ]
+  },
+  "_ModalDeleteBase-s8Hnz31H.js": {
+    "file": "assets/ModalDeleteBase-s8Hnz31H.js",
+    "name": "ModalDeleteBase",
+    "imports": [
+      "_react-sWiKbk-Z.js"
+    ]
+  },
+  "_axios-ngrFHoWO.js": {
+    "file": "assets/axios-ngrFHoWO.js",
+    "name": "axios"
+  },
+  "_inertia-Dgc5Zg7U.js": {
+    "file": "assets/inertia-Dgc5Zg7U.js",
+    "name": "inertia",
+    "imports": [
+      "_axios-ngrFHoWO.js",
+      "_vendor-Z5AVMo_k.js"
+    ]
+  },
+  "_react-sWiKbk-Z.js": {
+    "file": "assets/react-sWiKbk-Z.js",
+    "name": "react",
+    "imports": [
+      "_inertia-Dgc5Zg7U.js",
+      "_vendor-Z5AVMo_k.js"
+    ],
+    "dynamicImports": [
+      "_vendor-Z5AVMo_k.js"
+    ]
+  },
+  "_useExcelDownload-TVslJZpk.js": {
+    "file": "assets/useExcelDownload-TVslJZpk.js",
+    "name": "useExcelDownload",
+    "imports": [
+      "_react-sWiKbk-Z.js",
+      "_axios-ngrFHoWO.js"
+    ]
+  },
+  "_vendor-Z5AVMo_k.js": {
+    "file": "assets/vendor-Z5AVMo_k.js",
+    "name": "vendor",
+    "isDynamicEntry": true,
+    "imports": [
+      "_react-sWiKbk-Z.js"
+    ]
+  },
+  "resources/js/app.tsx": {
+    "file": "assets/app-DEFaNKxM.js",
+    "name": "app",
+    "src": "resources/js/app.tsx",
+    "isEntry": true,
+    "imports": [
+      "_react-sWiKbk-Z.js",
+      "_vendor-Z5AVMo_k.js",
+      "_inertia-Dgc5Zg7U.js",
+      "_axios-ngrFHoWO.js"
+    ],
+    "dynamicImports": [
+      "resources/js/views/Admin/Roles/Components/RoleCreate.tsx",
+      "resources/js/views/Admin/Roles/Components/RoleDelete.tsx",
+      "resources/js/views/Admin/Roles/Components/RoleEdit.tsx",
+      "resources/js/views/Admin/Roles/Index.tsx",
+      "resources/js/views/Admin/Users/Components/UserCreate.tsx",
+      "resources/js/views/Admin/Users/Components/UserDelete.tsx",
+      "resources/js/views/Admin/Users/Components/UserEdit.tsx",
+      "resources/js/views/Admin/Users/Components/UserServices.tsx",
+      "resources/js/views/Admin/Users/Index.tsx",
+      "resources/js/views/Auth/CheckEmailPage.tsx",
+      "resources/js/views/Auth/Login2FAPage.tsx",
+      "resources/js/views/Auth/LoginPage.tsx",
+      "resources/js/views/Auth/RegisterPage.tsx",
+      "resources/js/views/DashBoard/Components/ActivityLogWidget.tsx",
+      "resources/js/views/DashBoard/Components/ClientActivity.tsx",
+      "resources/js/views/DashBoard/Components/RevenueStreamWidget.tsx",
+      "resources/js/views/DashBoard/Components/StatsWidget.tsx",
+      "resources/js/views/DashBoard/Components/TopServicesWidget.tsx",
+      "resources/js/views/DashBoard/Index.tsx",
+      "resources/js/views/MyPurchases/Report.tsx",
+      "resources/js/views/Profile/Components/ActiveSessions.tsx",
+      "resources/js/views/Profile/Components/ChangePasswordForm.tsx",
+      "resources/js/views/Profile/Components/DeleteAccount.tsx",
+      "resources/js/views/Profile/Components/UpdateProfileForm.tsx",
+      "resources/js/views/Profile/Index.tsx",
+      "resources/js/views/Seller/Customers/Components/CustomerCreate.tsx",
+      "resources/js/views/Seller/Customers/Components/CustomerDelete.tsx",
+      "resources/js/views/Seller/Customers/Components/CustomerEdit.tsx",
+      "resources/js/views/Seller/Customers/Index.tsx",
+      "resources/js/views/Seller/Sale/Index.tsx",
+      "resources/js/views/Seller/Sale/ReportSale.tsx",
+      "resources/js/views/pages/Crud.tsx",
+      "resources/js/views/pages/Documentation.tsx",
+      "resources/js/views/pages/Empty.tsx",
+      "resources/js/views/pages/Landing.tsx",
+      "resources/js/views/pages/NotFound.tsx",
+      "resources/js/views/pages/auth/Access.tsx",
+      "resources/js/views/pages/auth/Error.tsx",
+      "resources/js/views/pages/auth/Login.tsx"
+    ],
+    "css": [
+      "assets/app-RV4mBKUK.css"
+    ]
+  },
+  "resources/js/views/Admin/Roles/Components/RoleCreate.tsx": {
+    "file": "assets/RoleCreate-xTsn4Xhg.js",
+    "name": "RoleCreate",
+    "src": "resources/js/views/Admin/Roles/Components/RoleCreate.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_react-sWiKbk-Z.js",
+      "_BaseDrawer-BkvK-6Gl.js",
+      "_inertia-Dgc5Zg7U.js",
+      "_axios-ngrFHoWO.js",
+      "_vendor-Z5AVMo_k.js"
+    ]
+  },
+  "resources/js/views/Admin/Roles/Components/RoleDelete.tsx": {
+    "file": "assets/RoleDelete-Dd1OysXO.js",
+    "name": "RoleDelete",
+    "src": "resources/js/views/Admin/Roles/Components/RoleDelete.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_react-sWiKbk-Z.js",
+      "_ModalDeleteBase-s8Hnz31H.js",
+      "_inertia-Dgc5Zg7U.js",
+      "_axios-ngrFHoWO.js",
+      "_vendor-Z5AVMo_k.js"
+    ]
+  },
+  "resources/js/views/Admin/Roles/Components/RoleEdit.tsx": {
+    "file": "assets/RoleEdit-wXhrK_00.js",
+    "name": "RoleEdit",
+    "src": "resources/js/views/Admin/Roles/Components/RoleEdit.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_react-sWiKbk-Z.js",
+      "_BaseDrawer-BkvK-6Gl.js",
+      "_inertia-Dgc5Zg7U.js",
+      "_axios-ngrFHoWO.js",
+      "_vendor-Z5AVMo_k.js"
+    ]
+  },
+  "resources/js/views/Admin/Roles/Index.tsx": {
+    "file": "assets/Index-yGCTf31V.js",
+    "name": "Index",
+    "src": "resources/js/views/Admin/Roles/Index.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_react-sWiKbk-Z.js",
+      "_AppLayout-BJnk0JD9.js",
+      "_EnhancedDataTable-BPwqwYJ3.js",
+      "resources/js/views/Admin/Roles/Components/RoleCreate.tsx",
+      "resources/js/views/Admin/Roles/Components/RoleEdit.tsx",
+      "resources/js/views/Admin/Roles/Components/RoleDelete.tsx",
+      "_inertia-Dgc5Zg7U.js",
+      "_axios-ngrFHoWO.js",
+      "_vendor-Z5AVMo_k.js",
+      "resources/js/app.tsx",
+      "_BaseDrawer-BkvK-6Gl.js",
+      "_ModalDeleteBase-s8Hnz31H.js"
+    ]
+  },
+  "resources/js/views/Admin/Users/Components/UserCreate.tsx": {
+    "file": "assets/UserCreate-BBd-mbwW.js",
+    "name": "UserCreate",
+    "src": "resources/js/views/Admin/Users/Components/UserCreate.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_react-sWiKbk-Z.js",
+      "_BaseDrawer-BkvK-6Gl.js",
+      "_inertia-Dgc5Zg7U.js",
+      "_axios-ngrFHoWO.js",
+      "_vendor-Z5AVMo_k.js"
+    ]
+  },
+  "resources/js/views/Admin/Users/Components/UserDelete.tsx": {
+    "file": "assets/UserDelete-B-d-kDe4.js",
+    "name": "UserDelete",
+    "src": "resources/js/views/Admin/Users/Components/UserDelete.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_react-sWiKbk-Z.js",
+      "_ModalDeleteBase-s8Hnz31H.js",
+      "_inertia-Dgc5Zg7U.js",
+      "_axios-ngrFHoWO.js",
+      "_vendor-Z5AVMo_k.js"
+    ]
+  },
+  "resources/js/views/Admin/Users/Components/UserEdit.tsx": {
+    "file": "assets/UserEdit-ynjfdmQs.js",
+    "name": "UserEdit",
+    "src": "resources/js/views/Admin/Users/Components/UserEdit.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_react-sWiKbk-Z.js",
+      "_BaseDrawer-BkvK-6Gl.js",
+      "_inertia-Dgc5Zg7U.js",
+      "_axios-ngrFHoWO.js",
+      "_vendor-Z5AVMo_k.js"
+    ]
+  },
+  "resources/js/views/Admin/Users/Components/UserServices.tsx": {
+    "file": "assets/UserServices-DdW4W4_z.js",
+    "name": "UserServices",
+    "src": "resources/js/views/Admin/Users/Components/UserServices.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_react-sWiKbk-Z.js",
+      "_BaseDrawer-BkvK-6Gl.js",
+      "_inertia-Dgc5Zg7U.js",
+      "_axios-ngrFHoWO.js",
+      "_vendor-Z5AVMo_k.js"
+    ]
+  },
+  "resources/js/views/Admin/Users/Index.tsx": {
+    "file": "assets/Index-nq48IDW9.js",
+    "name": "Index",
+    "src": "resources/js/views/Admin/Users/Index.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_react-sWiKbk-Z.js",
+      "_AppLayout-BJnk0JD9.js",
+      "_EnhancedDataTable-BPwqwYJ3.js",
+      "resources/js/views/Admin/Users/Components/UserCreate.tsx",
+      "resources/js/views/Admin/Users/Components/UserEdit.tsx",
+      "resources/js/views/Admin/Users/Components/UserDelete.tsx",
+      "resources/js/views/Admin/Users/Components/UserServices.tsx",
+      "_inertia-Dgc5Zg7U.js",
+      "_axios-ngrFHoWO.js",
+      "_vendor-Z5AVMo_k.js",
+      "resources/js/app.tsx",
+      "_BaseDrawer-BkvK-6Gl.js",
+      "_ModalDeleteBase-s8Hnz31H.js"
+    ]
+  },
+  "resources/js/views/Auth/CheckEmailPage.tsx": {
+    "file": "assets/CheckEmailPage-DBqi0RPQ.js",
+    "name": "CheckEmailPage",
+    "src": "resources/js/views/Auth/CheckEmailPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_react-sWiKbk-Z.js",
+      "_AuthLayout-BW1xDVse.js",
+      "_inertia-Dgc5Zg7U.js",
+      "_axios-ngrFHoWO.js",
+      "_vendor-Z5AVMo_k.js",
+      "_FloatingConfigurator-DSB3k6EL.js",
+      "resources/js/app.tsx"
+    ],
+    "css": [
+      "assets/CheckEmailPage-CjfDxlfC.css"
+    ]
+  },
+  "resources/js/views/Auth/Login2FAPage.tsx": {
+    "file": "assets/Login2FAPage-fO5WRzaO.js",
+    "name": "Login2FAPage",
+    "src": "resources/js/views/Auth/Login2FAPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_react-sWiKbk-Z.js",
+      "_AuthLayout-BW1xDVse.js",
+      "_inertia-Dgc5Zg7U.js",
+      "_axios-ngrFHoWO.js",
+      "_vendor-Z5AVMo_k.js",
+      "_FloatingConfigurator-DSB3k6EL.js",
+      "resources/js/app.tsx"
+    ],
+    "css": [
+      "assets/Login2FAPage-UA_XmU0w.css"
+    ]
+  },
+  "resources/js/views/Auth/LoginPage.tsx": {
+    "file": "assets/LoginPage-BigtfB9L.js",
+    "name": "LoginPage",
+    "src": "resources/js/views/Auth/LoginPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_react-sWiKbk-Z.js",
+      "resources/js/app.tsx",
+      "_AuthLayout-BW1xDVse.js",
+      "_inertia-Dgc5Zg7U.js",
+      "_axios-ngrFHoWO.js",
+      "_vendor-Z5AVMo_k.js",
+      "_FloatingConfigurator-DSB3k6EL.js"
+    ],
+    "css": [
+      "assets/LoginPage-COhnN555.css"
+    ]
+  },
+  "resources/js/views/Auth/RegisterPage.tsx": {
+    "file": "assets/RegisterPage-DwTzfAoF.js",
+    "name": "RegisterPage",
+    "src": "resources/js/views/Auth/RegisterPage.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_react-sWiKbk-Z.js",
+      "resources/js/app.tsx",
+      "_AuthLayout-BW1xDVse.js",
+      "_inertia-Dgc5Zg7U.js",
+      "_axios-ngrFHoWO.js",
+      "_vendor-Z5AVMo_k.js",
+      "_FloatingConfigurator-DSB3k6EL.js"
+    ],
+    "css": [
+      "assets/RegisterPage-CcJyujMn.css"
+    ]
+  },
+  "resources/js/views/DashBoard/Components/ActivityLogWidget.tsx": {
+    "file": "assets/ActivityLogWidget-QDekEAk5.js",
+    "name": "ActivityLogWidget",
+    "src": "resources/js/views/DashBoard/Components/ActivityLogWidget.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_react-sWiKbk-Z.js",
+      "_inertia-Dgc5Zg7U.js",
+      "_axios-ngrFHoWO.js",
+      "_vendor-Z5AVMo_k.js"
+    ]
+  },
+  "resources/js/views/DashBoard/Components/ClientActivity.tsx": {
+    "file": "assets/ClientActivity-CQF3PsAK.js",
+    "name": "ClientActivity",
+    "src": "resources/js/views/DashBoard/Components/ClientActivity.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_react-sWiKbk-Z.js",
+      "_inertia-Dgc5Zg7U.js",
+      "_axios-ngrFHoWO.js",
+      "_vendor-Z5AVMo_k.js"
+    ]
+  },
+  "resources/js/views/DashBoard/Components/RevenueStreamWidget.tsx": {
+    "file": "assets/RevenueStreamWidget-DwwcPjEm.js",
+    "name": "RevenueStreamWidget",
+    "src": "resources/js/views/DashBoard/Components/RevenueStreamWidget.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_react-sWiKbk-Z.js",
+      "resources/js/app.tsx",
+      "_inertia-Dgc5Zg7U.js",
+      "_axios-ngrFHoWO.js",
+      "_vendor-Z5AVMo_k.js"
+    ]
+  },
+  "resources/js/views/DashBoard/Components/StatsWidget.tsx": {
+    "file": "assets/StatsWidget-CnJGD2ln.js",
+    "name": "StatsWidget",
+    "src": "resources/js/views/DashBoard/Components/StatsWidget.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_react-sWiKbk-Z.js",
+      "_inertia-Dgc5Zg7U.js",
+      "_axios-ngrFHoWO.js",
+      "_vendor-Z5AVMo_k.js"
+    ]
+  },
+  "resources/js/views/DashBoard/Components/TopServicesWidget.tsx": {
+    "file": "assets/TopServicesWidget-Ci44K8so.js",
+    "name": "TopServicesWidget",
+    "src": "resources/js/views/DashBoard/Components/TopServicesWidget.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_react-sWiKbk-Z.js",
+      "_inertia-Dgc5Zg7U.js",
+      "_axios-ngrFHoWO.js",
+      "_vendor-Z5AVMo_k.js"
+    ]
+  },
+  "resources/js/views/DashBoard/Index.tsx": {
+    "file": "assets/Index-NA64eRJh.js",
+    "name": "Index",
+    "src": "resources/js/views/DashBoard/Index.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_react-sWiKbk-Z.js",
+      "_AppLayout-BJnk0JD9.js",
+      "resources/js/views/DashBoard/Components/StatsWidget.tsx",
+      "resources/js/views/DashBoard/Components/RevenueStreamWidget.tsx",
+      "resources/js/views/DashBoard/Components/TopServicesWidget.tsx",
+      "resources/js/views/DashBoard/Components/ClientActivity.tsx",
+      "_inertia-Dgc5Zg7U.js",
+      "_axios-ngrFHoWO.js",
+      "_vendor-Z5AVMo_k.js",
+      "resources/js/app.tsx"
+    ]
+  },
+  "resources/js/views/MyPurchases/Report.tsx": {
+    "file": "assets/Report-DpBGjyiT.js",
+    "name": "Report",
+    "src": "resources/js/views/MyPurchases/Report.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_react-sWiKbk-Z.js",
+      "_AppLayout-BJnk0JD9.js",
+      "_EnhancedDataTable-BPwqwYJ3.js",
+      "_useExcelDownload-TVslJZpk.js",
+      "_inertia-Dgc5Zg7U.js",
+      "_axios-ngrFHoWO.js",
+      "_vendor-Z5AVMo_k.js",
+      "resources/js/app.tsx"
+    ]
+  },
+  "resources/js/views/Profile/Components/ActiveSessions.tsx": {
+    "file": "assets/ActiveSessions-Bd--sy9r.js",
+    "name": "ActiveSessions",
+    "src": "resources/js/views/Profile/Components/ActiveSessions.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_react-sWiKbk-Z.js",
+      "_inertia-Dgc5Zg7U.js",
+      "_axios-ngrFHoWO.js",
+      "_vendor-Z5AVMo_k.js"
+    ]
+  },
+  "resources/js/views/Profile/Components/ChangePasswordForm.tsx": {
+    "file": "assets/ChangePasswordForm-CjaBN4Sr.js",
+    "name": "ChangePasswordForm",
+    "src": "resources/js/views/Profile/Components/ChangePasswordForm.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_react-sWiKbk-Z.js",
+      "_inertia-Dgc5Zg7U.js",
+      "_axios-ngrFHoWO.js",
+      "_vendor-Z5AVMo_k.js"
+    ]
+  },
+  "resources/js/views/Profile/Components/DeleteAccount.tsx": {
+    "file": "assets/DeleteAccount-XoNOK3P0.js",
+    "name": "DeleteAccount",
+    "src": "resources/js/views/Profile/Components/DeleteAccount.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_react-sWiKbk-Z.js",
+      "_inertia-Dgc5Zg7U.js",
+      "_axios-ngrFHoWO.js",
+      "_vendor-Z5AVMo_k.js"
+    ]
+  },
+  "resources/js/views/Profile/Components/UpdateProfileForm.tsx": {
+    "file": "assets/UpdateProfileForm-B6avE1G8.js",
+    "name": "UpdateProfileForm",
+    "src": "resources/js/views/Profile/Components/UpdateProfileForm.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_react-sWiKbk-Z.js",
+      "_inertia-Dgc5Zg7U.js",
+      "_axios-ngrFHoWO.js",
+      "_vendor-Z5AVMo_k.js"
+    ]
+  },
+  "resources/js/views/Profile/Index.tsx": {
+    "file": "assets/Index-p0p0HhlR.js",
+    "name": "Index",
+    "src": "resources/js/views/Profile/Index.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_react-sWiKbk-Z.js",
+      "_AppLayout-BJnk0JD9.js",
+      "resources/js/views/Profile/Components/UpdateProfileForm.tsx",
+      "resources/js/views/Profile/Components/ChangePasswordForm.tsx",
+      "resources/js/views/Profile/Components/ActiveSessions.tsx",
+      "resources/js/views/Profile/Components/DeleteAccount.tsx",
+      "_inertia-Dgc5Zg7U.js",
+      "_axios-ngrFHoWO.js",
+      "_vendor-Z5AVMo_k.js",
+      "resources/js/app.tsx"
+    ]
+  },
+  "resources/js/views/Seller/Customers/Components/CustomerCreate.tsx": {
+    "file": "assets/CustomerCreate-DaL9XXOI.js",
+    "name": "CustomerCreate",
+    "src": "resources/js/views/Seller/Customers/Components/CustomerCreate.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_react-sWiKbk-Z.js",
+      "_BaseDrawer-BkvK-6Gl.js",
+      "_inertia-Dgc5Zg7U.js",
+      "_axios-ngrFHoWO.js",
+      "_vendor-Z5AVMo_k.js"
+    ]
+  },
+  "resources/js/views/Seller/Customers/Components/CustomerDelete.tsx": {
+    "file": "assets/CustomerDelete-BlKIbHV5.js",
+    "name": "CustomerDelete",
+    "src": "resources/js/views/Seller/Customers/Components/CustomerDelete.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_react-sWiKbk-Z.js",
+      "_ModalDeleteBase-s8Hnz31H.js",
+      "_inertia-Dgc5Zg7U.js",
+      "_axios-ngrFHoWO.js",
+      "_vendor-Z5AVMo_k.js"
+    ]
+  },
+  "resources/js/views/Seller/Customers/Components/CustomerEdit.tsx": {
+    "file": "assets/CustomerEdit-D4WSVWe_.js",
+    "name": "CustomerEdit",
+    "src": "resources/js/views/Seller/Customers/Components/CustomerEdit.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_react-sWiKbk-Z.js",
+      "_BaseDrawer-BkvK-6Gl.js",
+      "_inertia-Dgc5Zg7U.js",
+      "_axios-ngrFHoWO.js",
+      "_vendor-Z5AVMo_k.js"
+    ]
+  },
+  "resources/js/views/Seller/Customers/Index.tsx": {
+    "file": "assets/Index-20QFC3tp.js",
+    "name": "Index",
+    "src": "resources/js/views/Seller/Customers/Index.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_react-sWiKbk-Z.js",
+      "_AppLayout-BJnk0JD9.js",
+      "_EnhancedDataTable-BPwqwYJ3.js",
+      "resources/js/views/Seller/Customers/Components/CustomerCreate.tsx",
+      "resources/js/views/Seller/Customers/Components/CustomerEdit.tsx",
+      "resources/js/views/Seller/Customers/Components/CustomerDelete.tsx",
+      "_inertia-Dgc5Zg7U.js",
+      "_axios-ngrFHoWO.js",
+      "_vendor-Z5AVMo_k.js",
+      "resources/js/app.tsx",
+      "_BaseDrawer-BkvK-6Gl.js",
+      "_ModalDeleteBase-s8Hnz31H.js"
+    ]
+  },
+  "resources/js/views/Seller/Sale/Index.tsx": {
+    "file": "assets/Index-rWXLpe3A.js",
+    "name": "Index",
+    "src": "resources/js/views/Seller/Sale/Index.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_react-sWiKbk-Z.js",
+      "_AppLayout-BJnk0JD9.js",
+      "_inertia-Dgc5Zg7U.js",
+      "_axios-ngrFHoWO.js",
+      "_vendor-Z5AVMo_k.js",
+      "resources/js/app.tsx"
+    ]
+  },
+  "resources/js/views/Seller/Sale/ReportSale.tsx": {
+    "file": "assets/ReportSale-BeNYc3eM.js",
+    "name": "ReportSale",
+    "src": "resources/js/views/Seller/Sale/ReportSale.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_react-sWiKbk-Z.js",
+      "_AppLayout-BJnk0JD9.js",
+      "_EnhancedDataTable-BPwqwYJ3.js",
+      "_useExcelDownload-TVslJZpk.js",
+      "_inertia-Dgc5Zg7U.js",
+      "_axios-ngrFHoWO.js",
+      "_vendor-Z5AVMo_k.js",
+      "resources/js/app.tsx"
+    ]
+  },
+  "resources/js/views/pages/Crud.tsx": {
+    "file": "assets/Crud-B1Jmk0Oj.js",
+    "name": "Crud",
+    "src": "resources/js/views/pages/Crud.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_react-sWiKbk-Z.js",
+      "_inertia-Dgc5Zg7U.js",
+      "_axios-ngrFHoWO.js",
+      "_vendor-Z5AVMo_k.js"
+    ]
+  },
+  "resources/js/views/pages/Documentation.tsx": {
+    "file": "assets/Documentation-BqosdsFx.js",
+    "name": "Documentation",
+    "src": "resources/js/views/pages/Documentation.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_react-sWiKbk-Z.js",
+      "_inertia-Dgc5Zg7U.js",
+      "_axios-ngrFHoWO.js",
+      "_vendor-Z5AVMo_k.js"
+    ]
+  },
+  "resources/js/views/pages/Empty.tsx": {
+    "file": "assets/Empty-ClSYwK_T.js",
+    "name": "Empty",
+    "src": "resources/js/views/pages/Empty.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_react-sWiKbk-Z.js",
+      "_inertia-Dgc5Zg7U.js",
+      "_axios-ngrFHoWO.js",
+      "_vendor-Z5AVMo_k.js"
+    ]
+  },
+  "resources/js/views/pages/Landing.tsx": {
+    "file": "assets/Landing-DKzQiPvr.js",
+    "name": "Landing",
+    "src": "resources/js/views/pages/Landing.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_react-sWiKbk-Z.js",
+      "_inertia-Dgc5Zg7U.js",
+      "_axios-ngrFHoWO.js",
+      "_vendor-Z5AVMo_k.js"
+    ]
+  },
+  "resources/js/views/pages/NotFound.tsx": {
+    "file": "assets/NotFound-D9-jHUpu.js",
+    "name": "NotFound",
+    "src": "resources/js/views/pages/NotFound.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_react-sWiKbk-Z.js",
+      "_FloatingConfigurator-DSB3k6EL.js",
+      "_inertia-Dgc5Zg7U.js",
+      "_axios-ngrFHoWO.js",
+      "_vendor-Z5AVMo_k.js",
+      "resources/js/app.tsx"
+    ]
+  },
+  "resources/js/views/pages/auth/Access.tsx": {
+    "file": "assets/Access-BMM3l0Jl.js",
+    "name": "Access",
+    "src": "resources/js/views/pages/auth/Access.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_react-sWiKbk-Z.js",
+      "_FloatingConfigurator-DSB3k6EL.js",
+      "_inertia-Dgc5Zg7U.js",
+      "_axios-ngrFHoWO.js",
+      "_vendor-Z5AVMo_k.js",
+      "resources/js/app.tsx"
+    ]
+  },
+  "resources/js/views/pages/auth/Error.tsx": {
+    "file": "assets/Error-B036Xggs.js",
+    "name": "Error",
+    "src": "resources/js/views/pages/auth/Error.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_react-sWiKbk-Z.js",
+      "_FloatingConfigurator-DSB3k6EL.js",
+      "_inertia-Dgc5Zg7U.js",
+      "_axios-ngrFHoWO.js",
+      "_vendor-Z5AVMo_k.js",
+      "resources/js/app.tsx"
+    ]
+  },
+  "resources/js/views/pages/auth/Login.tsx": {
+    "file": "assets/Login-Ci7hDmrI.js",
+    "name": "Login",
+    "src": "resources/js/views/pages/auth/Login.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_react-sWiKbk-Z.js",
+      "_inertia-Dgc5Zg7U.js",
+      "_axios-ngrFHoWO.js",
+      "_vendor-Z5AVMo_k.js"
+    ]
+  }
+}
