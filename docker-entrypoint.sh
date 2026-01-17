@@ -1,6 +1,9 @@
 #!/bin/bash
 set -e
 
+# Siempre empezar en el directorio correcto
+cd /app/plataforma
+
 if [ "$DJANGO_SETTINGS_MODULE" = "config.settings.local" ]; then
     echo "========================================"
     echo " Running in DEVELOPMENT mode"
@@ -51,6 +54,7 @@ else
     echo "Building frontend..."
     pnpm run build
 
+    # Volver al directorio de Django
     cd /app/plataforma
 
     # Esperar un poco para que Redis esté listo
