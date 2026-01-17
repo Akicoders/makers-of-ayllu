@@ -8,7 +8,6 @@ media/
 staticfiles/
 plataforma/config/static/assets/
 plataforma/config/static/manifest.json
-plataforma/secret.json
 
 # Backup files #
 *.bak
