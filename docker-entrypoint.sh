@@ -1,17 +1,11 @@
 #!/bin/bash
 set -e
 
-# Siempre empezar en el directorio correcto
-cd /app/plataforma
-
 if [ "$DJANGO_SETTINGS_MODULE" = "config.settings.local" ]; then
-    echo "========================================"
-    echo " Running in DEVELOPMENT mode"
-    echo "========================================"
+    echo "Running in development mode"
 
+    # Verificar e instalar dependencias de Node si es necesario
     cd /app/plataforma/frontend
-    
-    # Instalar dependencias si es necesario
     if [ ! -d "node_modules/@tiptap" ]; then
         echo "Installing Node dependencies..."
         pnpm install --no-frozen-lockfile
@@ -21,73 +15,50 @@ if [ "$DJANGO_SETTINGS_MODULE" = "config.settings.local" ]; then
     echo "Building frontend..."
     pnpm run build
 
-    # Iniciar Vite en background
+    # Iniciar Vite en modo dev en background
     echo "Starting Vite dev server..."
     pnpm run dev &
 
-    # Django
+    # Backend
     cd /app/plataforma
     echo "Running Django migrations..."
     python manage.py makemigrations --settings=config.settings.local
     python manage.py migrate --settings=config.settings.local
     python manage.py collectstatic --noinput --clear --settings=config.settings.local
 
-    # Seed inicial
+    # Ejecutar seed solo la primera vez
     if [ ! -f /app/.seeded ]; then
         echo "Running initial seed..."
-        python manage.py seed_local --settings=config.settings.local || true
+        python manage.py seed_local --settings=config.settings.local
         touch /app/.seeded
+    else
+        echo "Seed already executed, skipping."
     fi
 
     echo "Starting Django development server..."
     python manage.py runserver 0.0.0.0:8000 --settings=config.settings.local
-
 else
-    echo "========================================"
-    echo " Running in PRODUCTION mode"
-    echo "========================================"
+    echo "Running in production mode"
 
     # Build del frontend
     cd /app/plataforma/frontend
-    echo "Installing frontend dependencies..."
-    pnpm install --frozen-lockfile || pnpm install --no-frozen-lockfile
-    echo "Building frontend..."
+    pnpm install --frozen-lockfile
     pnpm run build
 
-    # Volver al directorio de Django
     cd /app/plataforma
+    python manage.py makemigrations --settings=config.settings.prod
+    python manage.py migrate --settings=config.settings.prod
+    python manage.py collectstatic --noinput --clear --settings=config.settings.prod
 
-    # Esperar un poco para que Redis esté listo
-    echo "Waiting for services..."
-    sleep 5
-
-    # Migraciones
-    echo "Running migrations..."
-    python manage.py migrate --noinput --settings=config.settings.prod
-
-    # Archivos estáticos
-    echo "Collecting static files..."
-    python manage.py collectstatic --noinput --settings=config.settings.prod
-
-    # Seed inicial
+    # Ejecutar seed solo la primera vez
     if [ ! -f /app/.seeded ]; then
         echo "Running initial seed..."
-        python manage.py seed_prod --settings=config.settings.prod || true
+        python manage.py seed_prod --settings=config.settings.prod
         touch /app/.seeded
+    else
+        echo "Seed already executed, skipping."
     fi
 
-    echo ""
-    echo "========================================"
-    echo " Starting Gunicorn on port 8000"
-    echo "========================================"
-
     export DJANGO_SETTINGS_MODULE=config.settings.prod
-    exec gunicorn \
-        --timeout 300 \
-        --workers 3 \
-        --threads 3 \
-        --bind 0.0.0.0:8000 \
-        --access-logfile - \
-        --error-logfile - \
-        config.wsgi:application
+    gunicorn --timeout 300 --workers 3 --threads 3 --bind 0.0.0.0:8000 config.wsgi:application
 fi

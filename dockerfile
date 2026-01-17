@@ -45,4 +45,7 @@ COPY . .
 COPY ./docker-entrypoint.sh /docker-entrypoint.sh
 RUN chmod +x /docker-entrypoint.sh
 
+# Directorio de trabajo para Django
+WORKDIR /app/plataforma
+
 ENTRYPOINT ["/docker-entrypoint.sh"]
