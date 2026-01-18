@@ -1,6 +1,6 @@
 """
 Production Settings - Makers of Ayllu
-Compatible con Dokploy/Docker - Sin Nginx, usando Whitenoise
+Compatible con Dokploy/Docker - Con Nginx
 """
 from .base import *
 from config.utils import get_secret
@@ -77,21 +77,8 @@ else:
     }
 
 # =============================================================================
-# Static Files - Whitenoise para servir estáticos con Gunicorn
+# Static Files
 # =============================================================================
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'static'
 DJANGO_VITE_DEV_MODE = False
-
-# Whitenoise para servir archivos estáticos en producción
-STORAGES = {
-    "default": {
-        "BACKEND": "django.core.files.storage.FileSystemStorage",
-    },
-    "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
-    },
-}
-
-# Agregar Whitenoise al middleware (después de SecurityMiddleware)
-MIDDLEWARE.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
